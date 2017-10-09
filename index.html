@@ -1,39 +1,44 @@
-<html ng-app = "myModule">
+<html ng-app="myModule">
+
 <head>
-<script src="angular.js"></script>
+    <script src="angular.js"></script>
 </head>
 
 <body>
+    <h1> Hey there, I am learning Angular for CB</h1>
+
 
     <div ng-controller="MainCtrl">
-        <h1> Hey there, I am learning Angular for CB</h1>
         <p ng-if="hrOfDay < 12">
             Good Morning Mr. XXXX
         </p>
 
         <p ng-if="hrOfDay > 12 && hrOfDay < 18">
-                Good Afternoon Mr. XXXX
+            Good Afternoon Mr. XXXX
         </p>
 
         <p ng-if="hrOfDay > 18">
-                Good Evening Mr. XXXX
+            Good Evening Mr. XXXX
+        </p>
+
+
+        <p>The hour of the day is :{{hrOfDay}}</p>
+        <p>The hour of the day is :
+            <span ng-bind="hrOfDay"> </span>
         </p>
     </div>
 
-    <p>The hour of the day is :{{hrOfDay}}</p>
-    <p>The hour of the day is :<span ng-bind="hrOfDay"> </span></p>
-
     <script>
-        var myModule = angular.module("myModule",[]);
-        myModule.controller("MainCtrl",main)
+        var app = angular.module("myModule", []);
+        app.controller("MainCtrl", main);
 
         function main($scope) {
             console.log("starting function");
-            $scope.hrOfDay = 13
+            $scope.hrOfDay = 13;
             console.log($scope.hrOfDay);
             console.log("main function called");
         }
-    
+
     </script>
 
 </body>

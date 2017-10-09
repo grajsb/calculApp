@@ -5,8 +5,8 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "C:/Users/grajs/Desktop/html/Angular1.x/JavaBrains/index.html",
-            "webRoot": "${workspaceRoot}/index.html"
+            "url": "C:/Users/grajs/Desktop/html/Angular1.x/JavaBrains/clockApp/clockApp.html",
+            "webRoot": "${workspaceRoot}/clockApp.html"
         }
     ]
 }
