@@ -1,35 +1,57 @@
-<html ng-app = "clockApp">
-    <head>
-        <title>
-            Clock App
-        </title>
-    </head>
-    <script src="angular.js">
-    </script>
+<html ng-app="clockApp">
 
-    <body>
-        <h1>
-            Clock App
-        </h1>
-
-        <div ng-controller="TimeCtrl">
-            <p>
-                Current time is : {{timeString}}
-            </p>            
-        </div>
-
-        <script>
-            var app = angular.module("clockApp",[]);
-            app.controller("TimeCtrl", timeCtrl);
-
-            function timeCtrl($scope){
-                var currentDate = new Date();
-                $scope.timeString = currentDate.toTimeString();
-            }
-
-        
-        </script>
+<head>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <title>
+        Clock App
+    </title>
+</head>
 
 
-    </body>
+<body>
+    <h1>
+        Clock App
+    </h1>
+
+    <div ng-controller="TimeCtrl">
+        <p>
+            Current time is : {{timeString}}
+        </p>
+        <button ng-click="updateTime()">
+            Update time
+        </button>
+
+
+        <p>Please enter your name: </p>
+        <input ng-model="userName" type="text"></input>
+
+        <p>And your name is : {{userName}}</p>
+
+        <p>Checkbox : <input type="checkbox" ng-model="checkBoxValue" /></p>
+        <p>Checkbox value : {{checkBoxValue}}</p>
+
+        <p>
+            Date of Birth : <input type="date" ng-model="dateValue"/> 
+        </p>
+
+        <p>
+            Date of Birth provided : {{dateValue}}
+        </p>
+
+        <p>
+            Radios:
+            <input type="radio" ng-model="radioValue" value="radio1"> Option 1 </input>
+            <input type="radio" ng-model="radioValue" value="radio2"> Option 2 </input>
+            <input type="radio" ng-model="radioValue" value="radio3"> Option 3 </input>
+            <input type="radio" ng-model="radioValue" value="radio4"> Option 4 </input>
+        </p>
+        <p>
+            Radio Selected : {{radioValue}}
+        </p>
+
+    </div>
+
+</body>
+
 </html>

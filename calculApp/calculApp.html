@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Handy Calculator</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="calc.css"></script>
+</head>
+
+<body>
+    <div class=center ng-controller="calCtrl">
+        <p>
+            <input type="textbox" ng-model="firstVal">
+            <button ng-click="operation()">
+                <span ng-bind="operation"></span>
+                </span>
+            </button>
+            <input type="textbox" ng-model="secondVal">
+            <button ng-click="calculate()">=</button>
+            0
+        </p>
+        <P>
+            Select Operations :
+            <button ng-model="operation" value="+">+</button>
+            <button ng-model="operation" value="=">-</button>
+            <button ng-model="operation" value="*">*</button>
+            <button ng-model="operation" value="/">/</button>
+        </P>
+    </div>
+</body>
+
+</html>
