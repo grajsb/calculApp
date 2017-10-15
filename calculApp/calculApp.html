@@ -1,32 +1,32 @@
-<html>
+<html ng-app="calculApp">
 
 <head>
     <title>Handy Calculator</title>
     <script src="angular.js"></script>
     <script src="app.js"></script>
-    <script src="calc.css"></script>
+    <!-- <script src="calc.css"></script> -->
 </head>
 
 <body>
-    <div class=center ng-controller="calCtrl">
-        <p>
-            <input type="textbox" ng-model="firstVal">
-            <button ng-click="operation()">
-                <span ng-bind="operation"></span>
-                </span>
-            </button>
-            <input type="textbox" ng-model="secondVal">
-            <button ng-click="calculate()">=</button>
-            0
-        </p>
-        <P>
-            Select Operations :
-            <button ng-model="operation" value="+">+</button>
-            <button ng-model="operation" value="=">-</button>
-            <button ng-model="operation" value="*">*</button>
-            <button ng-model="operation" value="/">/</button>
-        </P>
-    </div>
+    <center>
+        <h1>Simple Calculator</h1>
+        <div ng-controller="calCtrl as ctrl">
+
+            <input type="textbox" ng-model="ctrl.firstVal"></input>
+            <span ng-bind="ctrl.operationSelected"></span>
+            <input type="textbox" ng-model="ctrl.secondVal"></input>
+            <button ng-click="ctrl.calculate()" value="">=</button>
+            <span ng-bind="ctrl.resultValue"></span>
+            <p>
+                Select Operations :
+                <button ng-click="ctrl.operation('+')" value="+">+</button>
+                <button ng-click="ctrl.operation('-')" value="=">-</button>
+                <button ng-click="ctrl.operation('*')" value="*">*</button>
+                <button ng-click="ctrl.operation('/')" value="/">/</button>
+                <!-- {{ctrl.firstVal}} {{ctrl.secondVal}} -->
+            </p>
+        </div>
+    </center>
 </body>
 
 </html>
